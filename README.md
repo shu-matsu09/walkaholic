@@ -7,6 +7,7 @@
 | nickname           | string  | null: false, unique: true |
 | email              | string  | null: false, unique: true |
 | encrypted_password | string  | null: false               |
+| target_steps       | integer | null: false               |
 
 ### Association
 
