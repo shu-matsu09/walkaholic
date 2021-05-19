@@ -1,0 +1,2 @@
+module PedometersHelper
+end
