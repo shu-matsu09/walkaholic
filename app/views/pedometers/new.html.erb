@@ -1,0 +1,9 @@
+<%= form_with model: @pedometer, url:pedometers_path, local: true do |f| %>
+  <div class="pedometer-box">
+    歩数を記録する
+    <%= f.text_field :date, class:"date", placeholder:"日付(例：2021-05-01)" %>
+    <%= f.text_field :number_of_steps, class:"number_of_steps", placeholder:"歩数"%>
+    <%= f.collection_select(:condition_id, Condition.all, :id, :name, {}, {class:"condition-select"}) %>
+    <%= f.submit "記録する" ,class:"btn" %>
+  </div>
+<% end %>
