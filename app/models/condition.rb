@@ -1,6 +1,6 @@
-class Condition < ActiveHash::Base
+class Conditon < ActiveHash::Base
   self.data = [
-    { id: 1, name: '今日の調子を選んでください' },
+    { id: 1, name: '--' },
     { id: 2, name: 'とても調子が良い' },
     { id: 3, name: 'まあまあ調子が良い' },
     { id: 4, name: 'ふつう' },
