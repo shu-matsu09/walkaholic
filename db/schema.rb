@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_19_043919) do
+ActiveRecord::Schema.define(version: 2021_05_30_061108) do
 
   create_table "pedometers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "number_of_steps", null: false
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2021_05_19_043919) do
     t.date "date", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_pedometers_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -34,4 +36,5 @@ ActiveRecord::Schema.define(version: 2021_05_19_043919) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "pedometers", "users"
 end
