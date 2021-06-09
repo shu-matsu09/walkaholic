@@ -1,8 +1,9 @@
-<h1>あなたの歩数</h1>
+<h2>あなたの歩数</h2>
 <%= link_to "記録する", new_pedometer_path, class:"post" %>
 
 <% @pedometers.each do |pedometer| %>
   <div class="pedometer">
+    <div><%= pedometer.user.nickname %></div>
     <div class="pedometer-condition">
       <%= pedometer.condition.name %>
     </div>
