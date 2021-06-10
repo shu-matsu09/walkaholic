@@ -4,12 +4,18 @@
   </div>
   <% if user_signed_in? %>
     <% if current_user.liked_by?(pedometer.id) %>
-      <div class='likes_btn'>
-        <td><%= link_to 'いいねを外す', destroy_like_path(pedometer), method: :DELETE, remote: true %><%= pedometer.likes.count %></td>
+      <div>
+        <%= link_to destroy_like_path(pedometer), class: "like-link", method: :DELETE, remote: true do %>
+          <i class="fa fa-heart unlike-btn"></i>
+        <% end %>
+        <%= pedometer.likes.count %>
       </div>
     <% else %>
-      <div class='likes_btn'>
-        <td><%= link_to 'いいね', create_like_path(pedometer), method: :POST, remote: true %><%= pedometer.likes.count %></td>
+      <div>
+        <%= link_to create_like_path(pedometer), class: "like-link", method: :POST, remote: true do %>
+          <i class="fa fa-heart like-btn"></i>
+        <% end %>
+        <%= pedometer.likes.count %>
       </div>
     <% end %>
   <% end %>
