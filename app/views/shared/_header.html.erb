@@ -1,0 +1,29 @@
+<div class="header-upper">
+  <div class="title">Walkaholic</div>
+  <div class="account-button">
+    <% if user_signed_in? %>
+      <div class="user_nav grid-6">
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      </div>
+    <% else %>
+      <div class="grid-6">
+        <%= link_to "ログイン", new_user_session_path, class: "post" %>
+        <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="header-lower">
+  <% if user_signed_in? %>
+    <div class="mypage">
+      <%= link_to "マイページ", new_pedometer_path, class:"post2" %>
+    </div>
+      <div class="target-steps">
+        <%= current_user.nickname %>さんの目標歩数は<%= current_user.target_steps %>歩
+      </div>
+    <div class="record" >
+      <%= link_to "記録する", new_pedometer_path, class:"post2" %>
+    </div>
+  <% end %>
+</div>

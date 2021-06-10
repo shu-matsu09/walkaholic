@@ -1,0 +1,21 @@
+<div class="topic">
+  <p>みんなの記録</p>
+</div>
+<% @pedometers.each do |pedometer| %>
+  <div class="pedometer">
+    <div class="pedometer-nickname">
+      <%= pedometer.user.nickname %>
+    </div>
+    <div class="middle-layer">
+      <div class="pedometer-date">
+        <%= pedometer.date %>
+      </div>
+      <div class="pedometer-number_of_steps">
+        <%= pedometer.number_of_steps %>歩
+      </div>
+    </div>
+    <div class="pedometer-condition">
+      <%= pedometer.condition.name %>
+    </div>
+  </div>
+<% end %>

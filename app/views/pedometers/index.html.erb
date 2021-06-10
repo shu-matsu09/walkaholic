@@ -1,17 +1,13 @@
-<h2>あなたの歩数</h2>
-<%= link_to "記録する", new_pedometer_path, class:"post" %>
+<div class="header">
+  <%= render "shared/header" %>
+</div>
 
-<% @pedometers.each do |pedometer| %>
-  <div class="pedometer">
-    <div><%= pedometer.user.nickname %></div>
-    <div class="pedometer-condition">
-      <%= pedometer.condition.name %>
-    </div>
-    <div class="pedometer-date">
-      <%= pedometer.date %>
-    </div>
-    <div class="pedometer-number_of_steps">
-      <%= pedometer.number_of_steps %>歩
-    </div>
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "shared/side_bar" %>
   </div>
-<% end %>
+
+  <div class="top-page">
+    <%= render "shared/top_page" %>
+  </div>
+</div>
