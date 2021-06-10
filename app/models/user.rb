@@ -8,5 +8,9 @@ class User < ApplicationRecord
   validates :target_steps,   presence: true
 
   has_many :pedometers
+  has_many :likes
 
+  def liked_by?(pedometer_id)
+    likes.where(pedometer_id: pedometer_id).exists?
+  end
 end

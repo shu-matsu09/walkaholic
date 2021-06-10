@@ -3,8 +3,21 @@
 </div>
 <% @pedometers.each do |pedometer| %>
   <div class="pedometer">
-    <div class="pedometer-nickname">
-      <%= pedometer.user.nickname %>
+    <div class='upper-layer'>
+      <div class="pedometer-nickname">
+        <%= pedometer.user.nickname %>
+      </div>
+      <% if user_signed_in? %>
+        <% if current_user.liked_by?(pedometer.id) %>
+          <div class='likes_btn'>
+            <td><%= link_to 'いいねを外す', destroy_like_path(pedometer), method: :DELETE %><%= pedometer.likes.count %></td>
+          </div>
+        <% else %>
+          <div class='likes_btn'>
+            <td><%= link_to 'いいね', create_like_path(pedometer), method: :POST %><%= pedometer.likes.count %></td>
+          </div>
+        <% end %>
+      <% end %>
     </div>
     <div class="middle-layer">
       <div class="pedometer-date">
