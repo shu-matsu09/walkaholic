@@ -20,7 +20,7 @@
       <%= link_to "マイページ", new_pedometer_path, class:"post2" %>
     </div>
       <div class="target-steps">
-        あなたの目標歩数は<%= current_user.target_steps %>歩
+        <%= current_user.nickname %>さんの目標歩数は<%= current_user.target_steps %>歩
       </div>
     <div class="record" >
       <%= link_to "記録する", new_pedometer_path, class:"post2" %>

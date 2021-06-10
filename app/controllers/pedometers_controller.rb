@@ -12,14 +12,14 @@ class PedometersController < ApplicationController
     if @pedometer.save
       redirect_to root_path
     else
-      render :new
+      render new_pedometer_path
     end
   end
 
   private
 
   def pedometer_params
-    params.require(:pedometer).permit(:date,:number_of_steps,:condition_id)
+    params.require(:pedometer).permit(:date,:number_of_steps,:condition_id).merge(user_id: current_user.id)
   end
 
 end
