@@ -1,0 +1,33 @@
+<div class='upper-layer'>
+  <div class="pedometer-nickname">
+    <%= pedometer.user.nickname %>
+  </div>
+  <% if user_signed_in? %>
+    <% if current_user.liked_by?(pedometer.id) %>
+      <div>
+        <%= link_to destroy_like_path(pedometer), class: "like-link", method: :DELETE, remote: true do %>
+          <i class="fa fa-heart unlike-btn"></i>
+        <% end %>
+        <%= pedometer.likes.count %>
+      </div>
+    <% else %>
+      <div>
+        <%= link_to create_like_path(pedometer), class: "like-link", method: :POST, remote: true do %>
+          <i class="fa fa-heart like-btn"></i>
+        <% end %>
+        <%= pedometer.likes.count %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<div class="middle-layer">
+  <div class="pedometer-date">
+    <%= pedometer.date %>
+  </div>
+  <div class="pedometer-number_of_steps">
+    <%= pedometer.number_of_steps %>歩
+  </div>
+</div>
+<div class="pedometer-condition">
+  <%= pedometer.condition.name %>
+</div>

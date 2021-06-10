@@ -8,6 +8,13 @@
   </div>
 
   <div class="top-page">
-    <%= render "shared/top_page" %>
+    <div class="topic">
+      <p>みんなの記録</p>
+    </div>
+    <% @pedometers.each do |pedometer| %>
+      <div id="pedometer_<%= pedometer.id %>" class="pedometer">
+        <%= render 'pedometer', pedometer: pedometer %>
+      </div>
+    <% end %>
   </div>
 </div>
