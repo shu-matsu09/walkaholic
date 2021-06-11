@@ -1,6 +1,6 @@
 class PedometersController < ApplicationController
   def index
-    @pedometers = Pedometer.order("created_at DESC")
+    @pedometers = Pedometer.includes(:user).order("date DESC")
   end
 
   def new
