@@ -38,6 +38,9 @@ https://gyazo.com/6c33d35d32151abb988a3cd3860e7c8f
 ### Association
 
 - has_many :pedometers
+- has_many :likes
+- has_many :communities, through: community_users
+- has_many :messages
 
 ## pedometers テーブル
 
@@ -50,4 +53,55 @@ https://gyazo.com/6c33d35d32151abb988a3cd3860e7c8f
 
 ### Association
 
+- belongs_to :user
+- has_many   :likes
+
+## likes テーブル
+
+| Column    | Type    | Options     |
+| --------- | ------- | ----------- |
+| user      | integer | null: false |
+| pedometer | integer | null: false |
+
+### Association
+
+  belongs_to :user
+  belongs_to :pedometer
+
+## communities テーブル
+
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| name   | string | null: false |
+| detail | text   | null: false |
+
+### Association
+
+- has_many :community_users
+- has_many :users, through: community_users
+- has_many :messages
+
+## community_users テーブル
+
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| user        | references | null: false, foreign_key: true |
+| community   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :community
+- belongs_to :user
+
+## messages テーブル
+
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| content   | string     |                                |
+| user      | references | null: false, foreign_key: true |
+| community | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :community
 - belongs_to :user
