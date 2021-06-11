@@ -7,9 +7,10 @@
     <%= render "shared/side_bar" %>
   </div>
 
-  <div class="top-page">
+  <div class="my-page">
     <div class="topic">
       <p><%= @user.nickname %>さんの記録</p>
     </div>
+    <%= column_chart @pedometers.group(:date).sum(:number_of_steps), id: "column-chart", height: "500px", colors: ["pink"] %>
   </div>
 </div>

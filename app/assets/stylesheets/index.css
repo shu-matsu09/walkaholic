@@ -24,6 +24,14 @@
   background-position: bottom;
 }
 
+.my-page {
+  width: calc(100vw - 200px);
+  background-color: azure; 
+  background-size: cover;
+  background-origin: padding-box;
+  background-position: bottom;
+}
+
 h2{
   text-align: center;
 }
