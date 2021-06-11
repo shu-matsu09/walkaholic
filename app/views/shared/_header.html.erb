@@ -17,7 +17,7 @@
 <div class="header-lower">
   <% if user_signed_in? %>
     <div class="mypage">
-      <%= link_to "マイページ", new_pedometer_path, class:"post2" %>
+      <%= link_to "マイページ", user_path(current_user.id), class:"post2" %>
     </div>
       <div class="target-steps">
         <%= current_user.nickname %>さんの目標歩数は<%= current_user.target_steps %>歩
