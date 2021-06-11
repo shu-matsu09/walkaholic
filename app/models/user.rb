@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   has_many :pedometers
   has_many :likes
+  has_many :community_users
+  has_many :communities, through: :community_users
 
   def liked_by?(pedometer_id)
     likes.where(pedometer_id: pedometer_id).exists?
