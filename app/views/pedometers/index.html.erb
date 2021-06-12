@@ -1,20 +1,24 @@
-<div class="header">
-  <%= render "shared/header" %>
-</div>
-
 <div class="wrapper">
-  <div class="side-bar">
-    <%= render "shared/side_bar" %>
+  <div class="header">
+    <%= render "shared/header" %>
   </div>
 
-  <div class="top-page">
-    <div class="topic">
-      <p>みんなの記録</p>
+  <div class="main">
+    <div class="side-bar">
+      <%= render "shared/side_bar" %>
     </div>
-    <% @pedometers.each do |pedometer| %>
-      <div id="pedometer_<%= pedometer.id %>" class="pedometer">
-        <%= render 'pedometer', pedometer: pedometer %>
+
+    <div class="top-page">
+      <div class="topic">
+        <p>みんなの記録</p>
       </div>
-    <% end %>
+      <div class="pedometers">
+        <% @pedometers.each do |pedometer| %>
+          <div id="pedometer_<%= pedometer.id %>" class="pedometer">
+            <%= render 'pedometer', pedometer: pedometer %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

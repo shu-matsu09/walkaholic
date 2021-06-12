@@ -1,16 +1,18 @@
-<div class="header">
-  <%= render "shared/header" %>
-</div>
-
 <div class="wrapper">
-  <div class="side-bar">
-    <%= render "shared/side_bar" %>
+  <div class="header">
+    <%= render "shared/header" %>
   </div>
 
-  <div class="my-page">
-    <div class="topic">
-      <p><%= @user.nickname %>さんの記録</p>
+  <div class="main">
+    <div class="side-bar">
+      <%= render "shared/side_bar" %>
     </div>
-    <%= column_chart @pedometers.group(:date).sum(:number_of_steps), id: "column-chart", height: "500px", colors: ["pink"] %>
+
+    <div class="my-page">
+      <div class="topic">
+        <p><%= @user.nickname %>さんの記録</p>
+      </div>
+      <%= column_chart @pedometers.group(:date).sum(:number_of_steps), id: "column-chart", height: "500px", colors: ["pink"] %>
+    </div>
   </div>
 </div>

@@ -1,0 +1,27 @@
+.community-btn {
+  width: 150px;
+  padding: 10px;
+  border: 1px solid white;
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.side-bar-lower {
+  position: absolute;
+  width: 180px;
+  height: 100px;
+  bottom: 20px;
+}
+
+.community-index {
+  height: 50px;
+  margin-top: 20;
+}
+
+.create-community {
+  margin-top: 20;
+}
+
