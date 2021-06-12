@@ -8,6 +8,7 @@
   font-size: 36px;
   margin-top: 10px;
   margin-left: 20px;
+  text-decoration: none;
 }
 
 .account-button {
@@ -48,15 +49,4 @@
   margin-right: 10px;
 }
 
-.post2{
-  width: 150px;
-  padding: 10px;
-  border: 1px solid white;
-  background-color: blue;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  margin-bottom: 10px;
-  margin-right: 20px;
-}
 

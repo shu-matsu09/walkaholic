@@ -2,7 +2,7 @@
   <%= render "shared/header" %>
 </div>
 
-<div class="wrapper">
+<div class="main">
   <div class="side-bar">
     <%= render "shared/side_bar" %>
   </div>
@@ -11,10 +11,12 @@
     <div class="topic">
       <p>みんなの記録</p>
     </div>
-    <% @pedometers.each do |pedometer| %>
-      <div id="pedometer_<%= pedometer.id %>" class="pedometer">
-        <%= render 'pedometer', pedometer: pedometer %>
-      </div>
-    <% end %>
+    <div class="pedometers">
+      <% @pedometers.each do |pedometer| %>
+        <div id="pedometer_<%= pedometer.id %>" class="pedometer">
+          <%= render 'pedometer', pedometer: pedometer %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
