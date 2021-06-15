@@ -11,6 +11,7 @@
     <div class='community-form'>
       <h1>新規コミュニティ</h1>
       <%=form_with model: @community, local: true do |f|%>
+        <input name="community[user_ids][]" type="hidden" value=<%= current_user.id %>>
         <div class='community-form__field'>
           <div class='community-form__field--left'>
             <%= f.label :コミュニティ名, class: 'community-form__label'%>

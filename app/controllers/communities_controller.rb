@@ -15,6 +15,6 @@ class CommunitiesController < ApplicationController
   private
 
   def community_params
-    params.require(:community).permit(:name,:detail, user_ids: [])
+    params.require(:community).permit(:name, :detail, user_ids: []).merge(administrator_id: current_user.id)
   end
 end
