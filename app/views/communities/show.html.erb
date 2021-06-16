@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <div class="header">
+    <%= render "shared/header" %>
+  </div>
+
+  <div class="main">
+    <div class="side-bar">
+      <%= render "shared/side_bar" %>
+    </div>
+
+    <div class="top-page">
+      <div class="topic">
+        <p>コミュニティ詳細</p>
+      </div>
+      <div class="community-description">
+        <h1><%= @community.name %></h1>
+        <p><%= @community.detail %></p>
+        <% if current_user.id == @community.administrator_id %>
+          <%= link_to "編集", edit_community_path(@community.id), method: :get, class: "item-red-btn" %>
+          <p class="or-text">or</p>
+          <%= link_to "削除", community_path(@community.id), method: :delete, class:"item-destroy" %>
+        <% elsif @community_user_id == nil %>
+          <%= button_to "コミュニティに参加する", add_user_community_path(@community.id), method: :post, class: 'community-form__action-btn' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

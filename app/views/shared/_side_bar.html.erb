@@ -4,7 +4,7 @@
     <% current_user.communities.each do |community|%>
       <div class="my-communities">
         <div class="my-community-name">
-          <%= link_to community.name, "/" %>
+          <%= link_to community.name, community_path(community.id) %>
         </div>
       </div>
     <% end %>

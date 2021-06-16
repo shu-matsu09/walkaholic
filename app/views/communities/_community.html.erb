@@ -1,7 +1,5 @@
 <div class='upper-layer'>
-  <div class="community-name">
-    <%= community.name %>
-  </div>
+  <%= link_to community.name, community_path(community.id), class: "community-name" %>
   <% if user_signed_in? %>
   <% end %>
 </div>
