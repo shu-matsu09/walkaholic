@@ -56,14 +56,6 @@ h2{
   border-radius: 9px;
   text-align: center;
 }
-.topic p {
-  margin: 0; 
-  padding: 0;
-}
-
-.top-lower {
-  height: calc(50vh - 100px);
-}
 
 .pedometer{
   height:100px;

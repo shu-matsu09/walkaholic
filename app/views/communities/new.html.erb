@@ -9,30 +9,29 @@
     </div>
 
     <div class='community-form'>
-      <h1>新規コミュニティ</h1>
+      <div class="topic">
+        <p>新規コミュニティ</p>
+      </div>
       <%=form_with model: @community, local: true do |f|%>
         <input name="community[user_ids][]" type="hidden" value=<%= current_user.id %>>
         <div class='community-form__field'>
-          <div class='community-form__field--left'>
+          <div class='community-form__field--up'>
             <%= f.label :コミュニティ名, class: 'community-form__label'%>
           </div>
-          <div class='community-form__field--right'>
-            <%= f.text_field :name, class: 'chat__community_name community-form__input', placeholder: 'コミュニティ名を入力してください'%>
+          <div class='community-form__field--down'>
+            <%= f.text_field :name, class: 'community-form__input', placeholder: 'コミュニティ名を入力してください'%>
           </div>
         </div>
         <div class='community-form__field'>
-          <div class='community-form__field--left'>
+          <div class='community-form__field--up'>
             <%= f.label :コミュニティの詳細, class: 'community-form__label'%>
           </div>
-          <div class='community-form__field--right'>
-            <%= f.text_area :detail, class: 'chat__community_name community-form__input', placeholder: 'コミュニティの詳細を入力してください'%>
+          <div class='community-form__field--down'>
+            <%= f.text_area :detail, class: 'community-form__input', placeholder: 'コミュニティの詳細を入力してください'%>
           </div>
         </div>
         <div class='community-form__field'>
-          <div class='community-form__field--left'></div>
-          <div class='community-form__field--right'>
-            <%= f.submit "コミュニティを作成する", class: 'community-form__action-btn'%>
-          </div>
+          <%= f.submit "コミュニティを作成する", class: 'community-form__action-btn'%>
         </div>
       <% end %>
     </div>
