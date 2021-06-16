@@ -1,0 +1,10 @@
+<div class='upper-layer'>
+  <%= link_to community.name, community_path(community.id), class: "community-name" %>
+  <% if user_signed_in? %>
+  <% end %>
+</div>
+<div class="middle-layer">
+  <div class="community-detail">
+    <%= community.detail %>
+  </div>
+</div>
