@@ -1,4 +1,10 @@
 class CommunitiesController < ApplicationController
+  
+  def index
+    @communities = Community.all.order("created_at DESC")
+  end
+  
+  
   def new
     @community = Community.new
   end

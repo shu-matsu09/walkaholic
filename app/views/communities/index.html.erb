@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <div class="header">
+    <%= render "shared/header" %>
+  </div>
+
+  <div class="main">
+    <div class="side-bar">
+      <%= render "shared/side_bar" %>
+    </div>
+
+    <div class="top-page">
+      <div class="topic">
+        <p>コミュニティ一覧</p>
+      </div>
+      <div class="communities">
+        <% @communities.each do |community| %>
+          <div class="community">
+            <%= render 'community', community: community %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

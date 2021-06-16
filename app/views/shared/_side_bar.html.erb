@@ -2,8 +2,8 @@
   <div class="communities">
     <h2>参加しているコミュニティ</h2>
     <% current_user.communities.each do |community|%>
-      <div class="community">
-        <div class="community-name">
+      <div class="my-communities">
+        <div class="my-community-name">
           <%= link_to community.name, "/" %>
         </div>
       </div>
@@ -12,7 +12,7 @@
 
   <div class="side-bar-lower">
     <div class="community-index">
-      <%= link_to "コミュニティ一覧", "/", class: "community-btn" %>
+      <%= link_to "コミュニティ一覧", communities_path, class: "community-btn" %>
     </div>
     <div class="create-community">
       <%= link_to "コミュニティ作成", new_community_path, class: "community-btn" %>
