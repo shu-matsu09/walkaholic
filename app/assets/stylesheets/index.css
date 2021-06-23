@@ -114,3 +114,72 @@ h2{
   margin-bottom: 10px;
   margin-right: 20px;
 }
+
+.messages{
+  width: calc(100vw - 200px);
+  height: calc(100vh - 100px - 70px);
+  padding: 0 40px;
+  background-color: #FAFAFA;
+  overflow: scroll;
+}
+
+.message {
+  margin: 10px 0 0 0;
+}
+
+.upper-message{
+  display: flex;
+}
+
+.message-user {
+  color: #434a54;
+  font-size: 16px;
+}
+
+.message-date {
+  color: #999;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.lower-message {
+  margin-top: 10px;
+}
+
+.message-content {
+  color: #434a54;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+.form {
+  background-color: #F3FFE1;
+  height: 70px;
+  padding: 20px 40px;
+  display: flex;
+}
+
+.form-input {
+  background-color: white;
+  display: flex;
+  width: 100%;
+}
+
+.form-message {
+  border: none;
+  height: 30px;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.form-submit {
+  background-color: #38AEF0;
+  border: none;
+  color: white;
+  font-size: 16px;
+  height: 30px;
+  margin-left: 15px;
+  padding: 0 20px;
+  cursor: pointer;
+  cursor: hand;
+}

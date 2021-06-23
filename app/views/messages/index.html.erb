@@ -1,2 +1,26 @@
-<h1>Messages#index</h1>
-<p>Find me in app/views/messages/index.html.erb</p>
+<div class="wrapper">
+  <div class="header">
+    <%= render "shared/header" %>
+  </div>
+
+  <div class="main">
+    <div class="side-bar">
+      <%= render "shared/side_bar" %>
+    </div>
+
+    <div>
+      <div class="messages">
+        <div class="topic">
+          <p>チャット一覧</p>
+        </div>
+        <%= render partial: 'message', collection: @messages %>
+      </div>
+      <%= form_with model: [@community, @message], class: 'form', local: true do |f| %>
+        <div class="form-input">
+          <%= f.text_field :content, class: 'form-message', placeholder: 'message' %>
+        </div>
+        <%= f.submit '送信', class: 'form-submit' %>
+      <% end %>
+    </div>
+  </div>
+</div>
