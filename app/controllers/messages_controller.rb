@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @community = community.find(params[:community_id])
+    @community = Community.find(params[:community_id])
     @message = @community.messages.new(message_params)
     if @message.save
       redirect_to community_messages_path(@community)
