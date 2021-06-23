@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'messages/index'
+  get 'messages/create'
   devise_for :users
   root to: 'pedometers#index'
   resources :pedometers, only: [:index, :new, :create]
