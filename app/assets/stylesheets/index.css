@@ -142,16 +142,6 @@ h2{
   padding-left: 10px;
 }
 
-.lower-message {
-  margin-top: 10px;
-}
-
-.message-content {
-  color: #434a54;
-  font-size: 14px;
-  margin-bottom: 40px;
-}
-
 .form {
   background-color: #F3FFE1;
   height: 70px;
@@ -182,4 +172,62 @@ h2{
   padding: 0 20px;
   cursor: pointer;
   cursor: hand;
+}
+
+.balloon{
+  width: 100%;
+  margin: 10px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.says {
+  display: inline-block;
+  position: relative;
+  margin: 0 0 0 10px;
+  padding: 10px;
+  max-width: 90%;
+  border-radius: 12px;
+  background: #edf1ee;
+}
+.says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #edf1ee;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+.says p {
+  margin: 0;
+  padding: 0;
+}
+
+.mymessage {
+  margin: 10px 0;
+  text-align: right;
+}
+.mymessage .lower-message p {
+  display: inline-block;
+  position: relative;
+  margin: 0 10px 0 0;
+  padding: 8px;
+  max-width: 90%;
+  border-radius: 12px;
+  background: #30e852;
+  font-size: 15px;
+  text-align: left;
+}
+.mymessage .lower-message p:after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: -19px;
+  border: 8px solid transparent;
+  border-left: 18px solid #30e852;
+  -webkit-transform: rotate(-35deg);
+  transform: rotate(-35deg);
 }

@@ -11,7 +11,7 @@
     <div>
       <div class="messages">
         <div class="topic">
-          <p>チャット一覧</p>
+          <p><%= @community.name %></p>
         </div>
         <%= render partial: 'message', collection: @messages %>
       </div>
