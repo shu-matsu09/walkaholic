@@ -9,11 +9,13 @@ consumer.subscriptions.create("CommunityChannel", {
     // Called when the subscription has been terminated by the server
   },
 
-  received(data) {
-    // Called when there's incoming data on the websocket for this channel
+  received: function(data) {
+    return alert(data['message']);
   },
 
-  speak: function() {
-    return this.perform('speak');
+  speak: function(message) {
+    return this.perform('speak', {
+      message: message
+    });
   }
 });
