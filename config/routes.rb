@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  get 'messages/index'
+  get 'messages/create'
   devise_for :users
   root to: 'pedometers#index'
   resources :pedometers, only: [:index, :new, :create]
   resources :communities do
+    resources :messages, only: [:index, :create]
     member do
       post 'add_user'
     end

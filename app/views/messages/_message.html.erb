@@ -1,0 +1,28 @@
+<div class="message">
+  <% if message.user_id == current_user.id %>
+    <div class="mymessage">
+      <div class="message-date">
+        <p><%= message.created_at.to_s(:datetime_jp) %></p>
+      </div>
+      <div class="lower-message">
+          <p><%= message.content %></p>
+      </div>
+    </div>
+  <% else %>
+    <div class="upper-message">
+      <div class="message-user">
+        <%= message.user.nickname%>
+      </div>
+      <div class="message-date">
+        <%= message.created_at.to_s(:datetime_jp) %>
+      </div>
+    </div>
+    <div class="lower-message">
+      <div class="balloon">
+        <div class="says">
+          <p><%= message.content %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

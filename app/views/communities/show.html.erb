@@ -22,6 +22,7 @@
         <% elsif @community_user_id == nil %>
           <%= button_to "コミュニティに参加する", add_user_community_path(@community.id), method: :post, class: 'community-form__action-btn' %>
         <% end %>
+        <%= link_to "チャットページ", community_messages_path(@community.id) %>
       </div>
     </div>
   </div>
